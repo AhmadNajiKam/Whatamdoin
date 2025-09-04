@@ -15,8 +15,13 @@ const values = [
 	"majican@14533",
 	"busy",
 ];
-await client.query("INSERT INTO users VALUES ($1,$2,$3,$4,$5)", values);
-
+try {
+	await client.query("INSERT INTO users VALUES ($1,$2,$3,$4,$5)", values);
+} catch (err: any) {
+	if (err.code === "23505") {
+		console.log("User already exists, exiting ...");
+	}
+}
 const res = await client.query("SELECT * FROM users");
 console.log(res.rows);
 const port = process.env.PORT || 3000;
