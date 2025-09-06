@@ -1,4 +1,4 @@
-# whereami
+# WhatAmDoin
 This project is trying to solve the problem of people when they try to react out to me when I'm busy.
 - They now can access my status (Busy, Sleeping, Working or not free for you).
 - If there is a coffee chat you love to book with me, use the feature I provide to you.
